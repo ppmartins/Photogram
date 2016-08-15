@@ -27,14 +27,20 @@ class PostsController < ApplicationController
   end
 
   def update
-  if @post.update(post_params)
-    flash[:success] = "Post updated."
-    redirect_to root_path
-  else
-    flash[:alert] = "Something is wrong with your form!"
-    render :edit
+    if @post.update(post_params)
+      flash[:success] = "Post updated."
+      redirect_to root_path
+    else
+      flash[:alert] = "Something is wrong with your form!"
+      render :edit
+    end
   end
-end
+
+  def destroy
+    @post.destroy
+    flash[:success] = "Problem solved!  Post deleted."
+    redirect_to posts_path
+  end
 
 
   private

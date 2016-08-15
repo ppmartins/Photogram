@@ -18,7 +18,7 @@ feature 'Editing posts' do
   end
 
   scenario "won't update a post without an image" do
-    attach_file('Image', 'spec/files/images/coffee.jpg')
+    attach_file('Image', 'spec/files/coffee.zip')
     click_button 'Update Post'
 
     expect(page).to have_content("Something is wrong with your form!")

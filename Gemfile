@@ -14,6 +14,7 @@ gem 'simple_form'
 gem "paperclip", "~> 5.0.0"
 gem 'bcrypt'
 gem 'listen'
+gem 'bootstrap-sass', '~> 3.3.6'
 
 gem 'web-console', group: :development
 
