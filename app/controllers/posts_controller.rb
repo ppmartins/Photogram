@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
-  before_action :owned_post, only: [:edit, :update, :destroy]  
+  before_action :owned_post, only: [:edit, :update, :destroy]
 
   def index
     @posts = Post.all
@@ -40,7 +40,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
-    flash[:success] = "Problem solved!  Post deleted."
+    flash[:success] = "Your post has been deleted."
     redirect_to posts_path
   end
 
